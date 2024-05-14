@@ -4,12 +4,9 @@ request.send();
 request.onload = function(){
     var result = JSON.parse(request.response);
     console.log(result);
-    result.forEach(myFunction);
-    function myFunction(res) {
-
-    console.log(res.name); 
-    console.log(res.capital);
-    console.log(res.flag);
-
-}
+    result.forEach(function(country) {
+        console.log("Name:", country.name.common); 
+        console.log("Capital:", country.capital);
+        console.log("Flag:", country.flags.svg);
+    });
 }
